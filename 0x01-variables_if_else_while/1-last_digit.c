@@ -1,11 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/** 
- *
- * main - Determinate if the last digit of a number is greater than 5 
+/**
+ * main - Determinate if the last digit of a number is greater than 5
  * less than 6 or zero
- * 
+ *
  * Return: 0 if success
  */
 int main(void)
@@ -18,7 +17,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 	printf("%s %d is %d and is ", last, n, n % 10);
-	if ( n % 10 > 5)
+	if (n % 10 > 5)
 	{
 		printf("greater than 5\n");
 	}
