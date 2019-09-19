@@ -2,7 +2,7 @@
 /**
  * main - Prints the alphabets except q and e
  *
- * Return : 0 if success
+ * Return: 0 if success
  */
 int main(void)
 {
