@@ -4,7 +4,7 @@
  *
  * @c: Character to test
  *
- * return: 1 if is a lowercase letter.
+ * Return: 1 if is a lowercase letter, 0 otherwise
  */
 int _islower(int c)
 {
