@@ -2,14 +2,14 @@
 /**
  * print_last_digit - Prints last digit of a number
  *
- * @x: number to work with
+ * @n: number to work and find the last digit
  *
  * Return: the value of the last digit
  */
-int print_last_digit(int x)
+int print_last_digit(int n)
 {
-	if (x < 0)
-		x = x * -1;
-	_putchar ((x % 10) + '0');
-	return (x % 10);
+	if (n < 0)
+		n = n * -1;
+	_putchar ((n % 10) + '0');
+	return (n % 10);
 }
