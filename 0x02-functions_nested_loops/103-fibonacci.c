@@ -1,8 +1,8 @@
-#include  <stdio.h>
+#include <stdio.h>
 /**
- * main - Sum of the even-valued terms do not exceed 4,000,000
+ * main - sum of the even-valued terms do not exceed 4,000,000
  *
- * Return: 0
+ * Return: 0 if succes
  */
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 	{
 		z = x + y;
 		x = y;
-		x = z;
+		y = z;
 		if (z % 2 == 0 && z < 4000000)
 		{
 			sum += z;
