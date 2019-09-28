@@ -2,18 +2,17 @@
 /**
  * main - print fibonaccci numbers
  *
- * Return: Fibonacci sequence
+ * Return: 0 if succes
  */
 int main(void)
 {
 	int i;
 	double n1 = 1, n2 = 2, p;
-	double n = 98;
 
-	for (i = 1; i <= n; i++)
+	for (i = 1; i <= 98; i++)
 	{
 		printf("%.0f", n1);
-		if (i < n)
+		if (i < 98)
 			printf(", ");
 		p = n1 + n2;
 		n1 = n2;
