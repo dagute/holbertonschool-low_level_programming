@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-        int i, n;
+	int i;
 	double n1 = 1, n2 = 2, p;
-	n = 98;
+	double n = 98;
 
 	for (i = 1; i <= n; i++)
 	{
@@ -17,7 +17,7 @@ int main(void)
 			printf(", ");
 		p = n1 + n2;
 		n1 = n2;
-		n2 = p; 
+		n2 = p;
 	}
 	printf("\n");
 	return (0);
