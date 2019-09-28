@@ -1,28 +1,24 @@
 #include <stdio.h>
 /**
- * fibonaccinumbers - print the first 98 fibonacci numbers
- * @n: number to test
  * main - print fibonaccci numbers
+ *
  * Return: Fibonacci sequence
  */
-void fibonaccinumbers(double n)
+int main(void)
 {
-	int i;
+        int i, n;
 	double n1 = 1, n2 = 2, p;
+	n = 98;
 
 	for (i = 1; i <= n; i++)
 	{
 		printf("%.0f", n1);
-		p = n1 + n2;
-		n1 = n2;
-		n2 = p;
 		if (i < n)
 			printf(", ");
+		p = n1 + n2;
+		n1 = n2;
+		n2 = p; 
 	}
 	printf("\n");
-}
-int main(void)
-{
-	fibonaccinumbers(98);
 	return (0);
 }
