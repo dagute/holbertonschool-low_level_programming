@@ -2,12 +2,12 @@
 /**
  * rev_string - prints a string in reverse
  * @s: input string
- * Return: nothing
+ * 
  */
 void rev_string(char *s)
 {
 	int x, y;
-	char z[100];
+	char z[1000];
 
 	x = y = 0;
 
