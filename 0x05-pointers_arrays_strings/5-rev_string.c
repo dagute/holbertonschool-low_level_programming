@@ -1,7 +1,8 @@
 #include "holberton.h"
 /**
- * print_rev - prints a string in reverse
+ * rev_string - prints a string in reverse
  * @s: input string
+ * Return: nothing
  */
 void rev_string(char *s)
 {
