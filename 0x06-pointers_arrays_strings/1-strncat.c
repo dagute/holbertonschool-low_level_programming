@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _strncat: concatenates two strings
+ * _strncat - concatenates two strings
  * @dest: string to copy
  * @src: string
  * @n: bytes from src to append
