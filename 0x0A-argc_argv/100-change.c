@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int quarter, dime, five, two, one, n, sum;
 
-	quarter = dime = five = two = one = 0;
+	quarter = dime = five = two = one = sum = 0;
 
 	if (argc < 2)
 	{
@@ -38,4 +38,5 @@ int main(int argc, char *argv[])
 
 	sum = quarter + dime + five + two + one;
 	printf("%d\n", sum);
+	return (0);
 }
