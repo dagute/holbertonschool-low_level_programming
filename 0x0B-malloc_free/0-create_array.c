@@ -1,6 +1,6 @@
 #include<stdlib.h>
 /**
- * create array - creates an array of chars
+ * create_array - creates an array of chars
  * @size: size of array
  * @c: char to initialize
  * Return: null or pointer to the array
