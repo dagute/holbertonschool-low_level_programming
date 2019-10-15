@@ -1,12 +1,10 @@
 #include<stdlib.h>
-#include "holberton.h"
 /**
  * create array - creates an array of chars
  * @size: size of array
  * @c: char to initialize
  * Return: null or pointer to the array
  */
-
 char *create_array(unsigned int size, char c)
 {
 	unsigned int x;
@@ -18,7 +16,6 @@ char *create_array(unsigned int size, char c)
 	}
 
 	a = (char *) malloc(sizeof(char) * size);
-
 	if (a == NULL)
 	{
 		free(a);
