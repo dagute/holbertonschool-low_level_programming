@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * malloc_checked - allocates memory using malloc
+ * malloc_checked - allocate memory using malloc
  * @b: value number
  * Return: a pointer to the allocated memory
  */
