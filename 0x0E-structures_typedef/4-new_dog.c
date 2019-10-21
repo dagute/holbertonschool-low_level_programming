@@ -12,15 +12,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int nl, ol, x;
 	dog_t *snoop;
 
-	nl = 0;
-	ol = 0;
+	nl = ol = 0;
 
 	while (name[nl++])
 		;
 	while (owner[ol++])
 		;
 
-	snoop = malloc(sizeof(float) + nl + ol);
+	snoop = malloc(sizeof(dog_t));
 
 	if (snoop == NULL)
 		return (NULL);
