@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * main - pricipal function
- * Return - Void
+ * main - principal function
+ * Return: void
  */
 int main(void)
 {
