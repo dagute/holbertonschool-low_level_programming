@@ -25,7 +25,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (snoop == NULL)
 		return (NULL);
-			snoop->name = malloc(nl * sizeof(snoop->name));
+	snoop->name = malloc(nl * sizeof(snoop->name));
 	for (x = 0; x < nl; x++)
 		snoop->name[x] = name[x];
 
