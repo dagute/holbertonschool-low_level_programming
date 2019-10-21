@@ -1,5 +1,12 @@
 #ifndef SDOGG_H
 #define SDOGG_H
+/**
+ * struct dog - structure
+ * @name: first member
+ * @age: second member
+ * @owner: third member
+ * Description: new type struct dog
+ */
 
 typedef struct dog
 {
