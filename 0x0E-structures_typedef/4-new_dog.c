@@ -20,7 +20,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	while (owner[ol++])
 		;
 
-	snoop = malloc(sizeof(dog_t));
+	snoop = malloc(sizeof(float) + nl + ol);
 
 	if (snoop == NULL)
 		return (NULL);
@@ -32,7 +32,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	snoop->owner = malloc(ol * sizeof(snoop->owner));
 	if (snoop == NULL)
 		return (NULL);
-	for (x = 0; x  < ol; x++)
+	for (x = 0; x < ol; x++)
 		snoop->owner[x] = owner[x];
 	return (snoop);
 }
