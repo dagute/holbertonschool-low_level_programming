@@ -5,7 +5,7 @@
  * @name: pointer
  * @age: variable
  * @owner: pointer
- * Return: NULL if the function fails
+ * Return: pointer or NULL if the function fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -20,18 +20,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 		;
 
 	snoop = malloc(sizeof(dog_t));
-
 	if (snoop == NULL)
 		return (NULL);
 
-	snoop->name = malloc(nl * sizeof(snoop->name));
+	snoop->name = malloc(nl);
 	if (snoop == NULL)
 		return (NULL);
 	for (x = 0; x < nl; x++)
 		snoop->name[x] = name[x];
 
 	snoop->age = age;
-	snoop->owner = malloc(ol * sizeof(snoop->owner));
+
+	snoop->owner = malloc(ol);
 	if (snoop == NULL)
 		return (NULL);
 	for (x = 0; x < ol; x++)
