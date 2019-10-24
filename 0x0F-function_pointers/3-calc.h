@@ -4,6 +4,7 @@
  * struct op - Struct op
  * @op: operator
  * @f: function associated
+ * Description: new type struct op
  */
 typedef struct op
 {
