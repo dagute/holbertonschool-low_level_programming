@@ -21,7 +21,7 @@ int (*get_op_func(char *s))(int, int)
 
 	i = 0;
 
-	while (ops[i].op != NULL)
+	while (i < 5)
 	{
 
 		if (ops[i].op[0] == s[0] && s[1] == '\0')
