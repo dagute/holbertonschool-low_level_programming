@@ -4,6 +4,8 @@
  * struct op - Struct op
  * @op: operator
  * @f: function associated
+ * @a: input number
+ * @b: input number
  * Description: new type struct op
  */
 typedef struct op
