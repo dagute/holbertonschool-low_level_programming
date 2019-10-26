@@ -3,7 +3,8 @@
 #include <stdlib.h>
 /**
  * print_char - prints a character
- * @car: character
+ * @l: character
+ * @spt: pointer
  * Return: void
  */
 void print_char(char *spt, va_list l)
@@ -12,7 +13,8 @@ void print_char(char *spt, va_list l)
 }
 /**
  * print_integer - prints an integer
- * @ent: integer
+ * @l: integer
+ * @spt:pointer
  * Return: void
  */
 void print_integer(char *spt, va_list l)
@@ -21,7 +23,8 @@ void print_integer(char *spt, va_list l)
 }
 /**
  * print_float - prints a float
- * @flo: float
+ * @l: float
+ * @spt: pointer
  * Return: Void
  */
 void print_float(char *spt, va_list l)
@@ -30,7 +33,8 @@ void print_float(char *spt, va_list l)
 }
 /**
  * print_string - prints  a string
- * @cad: input string
+ * @l: input string
+ * @spt: pointer
  * Return: void
  */
 void print_string(char *spt, va_list l)
