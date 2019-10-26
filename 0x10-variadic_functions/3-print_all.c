@@ -1,47 +1,46 @@
-#include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include "variadic_functions.h"
+#include <stdlib.h>
 /**
  * print_char - prints a character
  * @car: character
  * Return: void
  */
-void print_char(va_list car)
+void print_char(char *spt, va_list l)
 {
-	printf("%c", va_arg(car, int));
+	printf("%s%c", spt, va_arg(l, int));
 }
 /**
  * print_integer - prints an integer
  * @ent: integer
  * Return: void
  */
-void print_integer(va_list ent)
+void print_integer(char *spt, va_list l)
 {
-	printf("%d", va_arg(ent, int));
+	printf("%s%d", spt, va_arg(l, int));
 }
 /**
  * print_float - prints a float
  * @flo: float
  * Return: Void
  */
-void print_float(va_list flo)
+void print_float(char *spt, va_list l)
 {
-	printf("%f", va_arg(flo, double));
+	printf("%s%f", spt, va_arg(l, double));
 }
 /**
  * print_string - prints  a string
  * @cad: input string
  * Return: void
  */
-void print_string(va_list cad)
+void print_string(char *spt, va_list l)
 {
 	char *str;
 
-	str = va_arg(cad, char *);
+	str = va_arg(l, char *);
 	if (str == NULL)
 		str = "(nil)";
-	printf("%s", str);
+	printf("%s%s", spt, str);
 }
 /**
  * print_all - print anything
@@ -50,9 +49,9 @@ void print_string(va_list cad)
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int x, y;
+	int x, y;
 	char *spt;
-	va_list all;
+	va_list l;
 
 	a_types argums[] = {
 		{"c", print_char},
@@ -62,24 +61,26 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 
-	va_start(all, format);
+	va_start(l, format);
+
+	x = 0;
 
 	spt = "";
 
-	for (x = 0; format != NULL && format[x] != '\0'; x++)
+	while (format != NULL && format[x] != '\0')
 	{
 		y = 0;
 		while (argums[y].arg != NULL)
 		{
 			if (format[x] == argums[y].arg[0])
 			{
-				printf("%s", spt);
-				argums[y].f(all);
+				argums[y].f(spt, l);
 				spt = ", ";
 			}
 			y++;
 		}
+		x++;
 	}
 	printf("\n");
-	va_end(all);
+	va_end(l);
 }
