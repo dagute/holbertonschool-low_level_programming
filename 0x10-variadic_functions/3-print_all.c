@@ -4,47 +4,43 @@
 /**
  * print_char - prints a character
  * @l: character
- * @spt: pointer
  * Return: void
  */
-void print_char(char *spt, va_list l)
+void print_char(va_list l)
 {
-	printf("%s%c", spt, va_arg(l, int));
+	printf("%c", va_arg(l, int));
 }
 /**
  * print_integer - prints an integer
  * @l: integer
- * @spt:pointer
  * Return: void
  */
-void print_integer(char *spt, va_list l)
+void print_integer(va_list l)
 {
-	printf("%s%d", spt, va_arg(l, int));
+	printf("%d", va_arg(l, int));
 }
 /**
  * print_float - prints a float
  * @l: float
- * @spt: pointer
  * Return: Void
  */
-void print_float(char *spt, va_list l)
+void print_float(va_list l)
 {
-	printf("%s%f", spt, va_arg(l, double));
+	printf("%f", va_arg(l, double));
 }
 /**
  * print_string - prints  a string
  * @l: input string
- * @spt: pointer
  * Return: void
  */
-void print_string(char *spt, va_list l)
+void print_string(va_list l)
 {
 	char *str;
 
 	str = va_arg(l, char *);
 	if (str == NULL)
 		str = "(nil)";
-	printf("%s%s", spt, str);
+	printf("%s", str);
 }
 /**
  * print_all - print anything
@@ -54,17 +50,16 @@ void print_string(char *spt, va_list l)
 void print_all(const char * const format, ...)
 {
 	int x, y;
-	char *spt;
 	va_list l;
+	char *spt;
 
 	a_types argums[] = {
 		{"c", print_char},
 		{"i", print_integer},
 		{"f", print_float},
-		{"s", print_char},
+		{"s", print_string},
 		{NULL, NULL}
 	};
-
 	va_start(l, format);
 
 	x = 0;
@@ -78,7 +73,8 @@ void print_all(const char * const format, ...)
 		{
 			if (format[x] == argums[y].arg[0])
 			{
-				argums[y].f(spt, l);
+				printf("%s", spt);
+				argums[y].f(l);
 				spt = ", ";
 			}
 			y++;
