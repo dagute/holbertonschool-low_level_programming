@@ -24,14 +24,14 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *newone;
 
-	if (head == NULL)
-		return (NULL);
-	newone = malloc(sizeof(list_t));
+	mewone = malloc(sizeof(list_t));
 	if (newone == NULL)
 		return (NULL);
+
 	newone->str = strdup(str);
 	newone->len = _strlen(str);
-	newone->next = *head;
+	if (*head != NULL)
+		newone->next = *head;
 	*head = newone;
 	return (*head);
 }
