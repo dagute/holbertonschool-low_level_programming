@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <string.h>
 /**
  * _strlen - length of the string
  * @s: string
@@ -27,15 +26,12 @@ list_t *add_node(list_t **head, const char *str)
 
 	if (head == NULL)
 		return (NULL);
-
 	newone = malloc(sizeof(list_t));
 	if (newone == NULL)
 		return (NULL);
-
 	newone->str = strdup(str);
 	newone->len = _strlen(str);
 	newone->next = *head;
-
 	*head = newone;
 	return (*head);
 }
