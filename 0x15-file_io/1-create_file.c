@@ -19,10 +19,8 @@ int create_file(const char *filename, char *text_content)
 	{
 		text_content = "";
 	}
-		/*while (text_content[x] != '\0')
-		  x++;*/
 
-	tot = write(cf, text_content,strlen(text_content));
+	tot = write(cf, text_content, strlen(text_content));
 	if (tot == -1)
 		return (-1);
 
