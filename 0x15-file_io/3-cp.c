@@ -28,18 +28,18 @@ int main(int argc, char *argv[])
 	rd = read(ff, bufer, 1024);
 	while (rd > 0)
 	{
+		wr = write(ft, bufer, rd);
+		if (wr == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+		rd = read(ff, bufer, 1024);
 		if (rd == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-			wr = write(ft, bufer, rd);
-			if (wr == -1)
-			{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-			}
-			rd = read(ff, bufer, 1024);
 	}
 	if (close(ff) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ff), exit(100);
