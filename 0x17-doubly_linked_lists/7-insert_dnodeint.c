@@ -8,32 +8,32 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int x;
+	unsigned int x = 0;
 	dlistint_t *new_ele, *t;
+	size_t length;
 
-	x = 0;
 	t = *h;
-
+	length = dlistint_len(*h);
 	if (h == NULL)
 		return (NULL);
 	new_ele = malloc(sizeof(dlistint_t));
 	if (new_ele == NULL)
+		return (NULL);
+	new_ele->n = n;
+	new_ele->prev = NULL;
+	new_ele->next = NULL;
+	if (length < idx)
 	{
 		free(new_ele);
 		return (NULL);
 	}
-	new_ele->n = n;
-	new_ele->prev = NULL;
-	new_ele->next = NULL;
 	if (idx == 0)
 	{
-		if (*h)
-		{
-			new_ele->next = *h;
-			(*h)->prev = new_ele;
-		}
+		new_ele->prev = NULL;
+		new_ele->next = t;
+		t->prev = new_ele;
 		*h = new_ele;
-		return (*h);
+		return (new_ele);
 	}
 	while (x < idx - 1)
 	{
@@ -46,4 +46,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (new_ele->next != NULL)
 		new_ele->next->prev = new_ele;
 	return (new_ele);
+}
+#include "lists.h"
+/**
+ * dlistint_len - returns the number of elements in a linked dlistint_t list
+ * @h: pointer to list
+ * Return:  number of elements
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t num_nodes;
+
+	for (num_nodes = 0; h; num_nodes++)
+		h = h->next;
+	return (num_nodes);
 }
